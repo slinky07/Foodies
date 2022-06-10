@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_list">
+
+    <item android:id="@+id/sort_low_high_ID"
+        android:title="@string/sort_low_high"
+        android:icon="@drawable/ic_baseline_trending_up_24" />
+    <item android:id="@+id/sort_high_low_ID"
+        android:title="@string/sort_high_low"
+        android:icon="@drawable/ic_baseline_trending_down_24" />
+    <item android:id="@+id/sort_rating_ID"
+        android:title="@string/rating"
+        android:icon="@drawable/ic_baseline_star_rate_24" />
+    <item android:id="@+id/sort_vegan_ID"
+        android:title="@string/vegan"
+        android:icon="@drawable/ic_baseline_grass_24" />
+
+
+
+
+</menu>

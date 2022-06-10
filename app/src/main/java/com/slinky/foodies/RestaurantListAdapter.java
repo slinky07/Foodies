@@ -49,8 +49,8 @@ public class RestaurantListAdapter extends BaseAdapter {
         imageView.setImageResource(restaurant.getBannerImage());
         titleTV.setText(Restaurant.makeTitle(restaurant));
         deliveryTV.setText(Restaurant.makeDeliveryLine(restaurant));
-        String ratingString = restaurant.getRating().toString();
-        rating.setText(ratingString);
+        rating.setText(String.valueOf(restaurant.getRating()));
+
 
         if(!restaurant.isVegetarian()){
             veganIcon.setVisibility(View.GONE);

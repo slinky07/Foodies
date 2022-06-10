@@ -6,23 +6,30 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.slinky.foodies.data.Restaurant;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class FeaturedPager extends FragmentPagerAdapter {
+    ArrayList<Restaurant> restaurants;
 
     public FeaturedPager(@NonNull FragmentManager fm) {
         super(fm);
+        this.restaurants = Utilities.getFeaturedRestaurants();
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
-            return new TestPicFragment();
-        } else if (position == 1) {
-            return new PicTwoFragmrnt();
-        } else if(position == 2){
-            return new PicThreeFragment();
+        switch (position) {
+            case 1:
+                return new FeatureFragment(restaurants.get(1));
+            case 2:
+                return new FeatureFragment(restaurants.get(2));
+            default:
+                return new FeatureFragment(restaurants.get(0));
         }
-        return new TestPicFragment();
     }
 
     @Override
