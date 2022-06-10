@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/restaurant_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="start"
+        app:srcCompat="@drawable/ajit"
+        android:contentDescription="@string/Image_banner_description" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/restaurant_title_TV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/test"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/restaurant_rating_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grey_circle_drawable"
+            android:text="@string/_5_0"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:gravity="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/restaurant_vegan_icon_TV"
+            android:layout_width="12sp"
+            android:layout_height="12sp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/green_square_drawable"
+            android:contentDescription="@string/veganIcon" />
+
+        <TextView
+            android:id="@+id/restaurant_delivery_TV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:text="@string/test"
+            app:drawableLeftCompat="@drawable/green_square_drawable" />
+    </LinearLayout>
+
+</LinearLayout>

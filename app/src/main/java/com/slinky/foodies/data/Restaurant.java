@@ -2,7 +2,7 @@ package com.slinky.foodies.data;
 
 import java.util.ArrayList;
 
-public class Restaurant {
+public class Restaurant extends RestaurantInterface {
     private String uuid;
     private String name;
     private String address1;

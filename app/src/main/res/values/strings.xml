@@ -2,4 +2,8 @@
     <string name="app_name">Foodies</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="test">test</string>
+    <string name="_5_0">5.0</string>
+    <string name="veganIcon">VeganIcon</string>
+    <string name="Image_banner_description">Banner of the listed restaurant</string>
 </resources>

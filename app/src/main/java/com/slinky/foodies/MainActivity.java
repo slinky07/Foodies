@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         FeaturedPager featuredPagerAdapter = new FeaturedPager(getSupportFragmentManager());
         viewPager.setAdapter(featuredPagerAdapter);
 
+        RestaurantListFragment restaurantListFragment = new RestaurantListFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.list_container, restaurantListFragment).commit();
+
     }
 
 }
