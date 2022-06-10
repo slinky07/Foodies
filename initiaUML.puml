@@ -1,0 +1,60 @@
+@startuml
+class com.slinky.foodies.data.Restaurant {
+- String uuid
+- String name
+- String address1
+- String address2
+- String city
+- String province
+- String postalCode
+- int minPrice
+- int maxPrice
+- int bannerImage
+- double deliveryFee
+- Double rating
+- boolean isFeatured
+- boolean isVegetarian
+- String deliveryTime
++ String getDeliveryTime()
++ void setDeliveryTime(String)
++ double getDeliveryFee()
++ void setDeliveryFee(double)
++ boolean isFeatured()
++ void setFeatured(boolean)
++ String getUuid()
++ void setUuid(String)
++ String getName()
++ void setName(String)
++ String getAddress1()
++ void setAddress1(String)
++ String getAddress2()
++ void setAddress2(String)
++ String getCity()
++ void setCity(String)
++ String getProvince()
++ void setProvince(String)
++ String getPostalCode()
++ void setPostalCode(String)
++ int getMinPrice()
++ void setMinPrice(int)
++ int getMaxPrice()
++ void setMaxPrice(int)
++ int getBannerImage()
++ void setBannerImage(int)
++ Double getRating()
++ void setRating(Double)
++ boolean isVegetarian()
++ void setVegetarian(boolean)
+}
+class com.slinky.foodies.DataSource {
+- {static} ArrayList<Restaurant> restaurantData
+- {static} ArrayList<Restaurant> setUpMockData()
++ {static} ArrayList<Restaurant> getRestaurantList()
+}
+class com.slinky.foodies.MainActivity {
+# void onCreate(Bundle)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.slinky.foodies.MainActivity
+@enduml
