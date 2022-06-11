@@ -15,6 +15,10 @@
     <item android:id="@+id/sort_vegan_ID"
         android:title="@string/vegan"
         android:icon="@drawable/ic_baseline_grass_24" />
+    <item android:id="@+id/show_montreal_list_ID"
+        android:title="@string/montreal"/>
+    <item android:id="@+id/show_back_default_list_ID"
+        android:title="@string/defaults"/>
 
 
 

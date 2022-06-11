@@ -1,8 +1,6 @@
 package com.slinky.foodies.data;
 
-import java.util.ArrayList;
-
-public class Restaurant extends RestaurantInterface {
+public class Restaurant extends AbstractRestaurant {
     private String uuid;
     private String name;
     private String address1;
@@ -14,7 +12,7 @@ public class Restaurant extends RestaurantInterface {
     private int maxPrice ;
     private int bannerImage ;
     private double deliveryFee ;
-    private Double rating ; //TODO: double check if this is the correct type
+    private Double rating ;
     private boolean isFeatured ;
     private boolean isVegetarian ;
 

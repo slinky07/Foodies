@@ -1,23 +1,22 @@
 package com.slinky.foodies;
 
-import android.widget.TextView;
-
+import com.slinky.foodies.data.DataSource;
 import com.slinky.foodies.data.Restaurant;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-
+//TODO : add a 5th sorting option
 public class Utilities extends DataSource {
     private static ArrayList<Restaurant> copyRestaurants = new ArrayList<>(DataSource.getRestaurantList());
     private static ArrayList<Restaurant> featuredRestaurants = new ArrayList<>();
 
-    public void setTextView(TextView textView, String text) {
-        textView.setText(text);
-    }
-
-    // get Featured Restaurants from DataSource static list o(n)
+    /**
+     * getFeaturedRestaurants returns a list of restaurants that are featured. O(N)
+     * <br>
+     * note that the list is being shuffled to randomize the order of the featured restaurants
+     * at every call of this method. this should be called only once at the beginning of the app.
+     * @return ArrayList<Restaurant> of featured restaurants.
+     */
     public static ArrayList<Restaurant> getFeaturedRestaurants() {
 
         for (Restaurant restaurant : getRestaurantList()) {
@@ -29,7 +28,10 @@ public class Utilities extends DataSource {
         return featuredRestaurants;
     }
 
-    // get vegan Restaurants from DataSource static list o(n)
+    /**
+     * sends vegan restaurants list. O(N)
+     * @return ArrayList<Restaurant> of vegan restaurants.
+     */
     public static ArrayList<Restaurant> getVeganRestaurants() {
         ArrayList<Restaurant> veganRestaurants = new ArrayList<>();
         for (Restaurant restaurant : getRestaurantList()) {
@@ -40,9 +42,21 @@ public class Utilities extends DataSource {
         return veganRestaurants;
     }
 
-    // get Restaurants from DataSource static list
-    // and sort by rating descending with quicksort o(n log n)
+    // make a list of all restaurants located in montreal
+    public static ArrayList<Restaurant> getMontrealRestaurants() {
+        ArrayList<Restaurant> montrealRestaurants = new ArrayList<>();
+        for (Restaurant restaurant : getRestaurantList()) {
+            if (restaurant.getCity().equals("Montreal")) {
+                montrealRestaurants.add(restaurant);
+            }
+        }
+        return montrealRestaurants;
+    }
 
+    /**
+     * sorts restaurants by name with quick sort O(n log n)
+     * @return sorted restaurants by rating.
+     */
     public static ArrayList<Restaurant> getByRatings() {
         return sortByRating(copyRestaurants);
     }
@@ -68,8 +82,10 @@ public class Utilities extends DataSource {
         return left;
     }
 
-    // get Restaurants from DataSource static list
-    // and sort by min price ascending with quicksort o(n log n)
+    /**
+     * sorts restaurants by price ascending with quick sort O(n log n)
+     * @return sorted restaurants by price ascending.
+     */
     public static ArrayList<Restaurant> getByPriceAsc() {
         return sortByPriceAsc(copyRestaurants);
     }
@@ -95,8 +111,10 @@ public class Utilities extends DataSource {
         return left;
     }
 
-    // get Restaurants from DataSource static list
-    // and sort by min price descending with quicksort o(n log n)
+    /**
+     * sorts restaurants by price descending with quick sort O(n log n)
+     * @return sorted restaurants by price descending.
+     */
     public static ArrayList<Restaurant> getByPriceDesc() {
         return sortByPriceDesc(copyRestaurants);
     }

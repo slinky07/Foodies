@@ -1,4 +1,4 @@
-package com.slinky.foodies;
+package com.slinky.foodies.features;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,19 +6,27 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.slinky.foodies.Utilities;
 import com.slinky.foodies.data.Restaurant;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class FeaturedPager extends FragmentPagerAdapter {
     ArrayList<Restaurant> restaurants;
 
     public FeaturedPager(@NonNull FragmentManager fm) {
         super(fm);
+
+        // get featured restaurants list when constructor is called.
         this.restaurants = Utilities.getFeaturedRestaurants();
+        //TODO: make the 3 dots to show what page is currently selected.
     }
 
+    /**
+     * method that returns the fragment at the given position in featured list.
+     * @param position the position of the fragment in the featured list.
+     * @return the fragment at the given position.
+     */
     @NonNull
     @Override
     public Fragment getItem(int position) {
@@ -32,11 +40,20 @@ public class FeaturedPager extends FragmentPagerAdapter {
         }
     }
 
+    /**
+     * method that returns the number of fragments in featured list.
+     * @return 3
+     */
     @Override
     public int getCount() {
         return 3;
     }
 
+    /**
+     * method that returns the title of the fragment at the given position.
+     * @param position the position of the fragment in the featured list.
+     * @return the title of the fragment at the given position.
+     */
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {

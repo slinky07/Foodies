@@ -1,0 +1,115 @@
+@startuml
+class com.slinky.foodies.features.FeatureFragment {
+~ String textView
+~ int imageView
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+class com.slinky.foodies.data.Restaurant {
+- String uuid
+- String name
+- String address1
+- String address2
+- String city
+- String province
+- String postalCode
+- int minPrice
+- int maxPrice
+- int bannerImage
+- double deliveryFee
+- Double rating
+- boolean isFeatured
+- boolean isVegetarian
+- String deliveryTime
++ String getDeliveryTime()
++ void setDeliveryTime(String)
++ double getDeliveryFee()
++ void setDeliveryFee(double)
++ boolean isFeatured()
++ void setFeatured(boolean)
++ String getUuid()
++ void setUuid(String)
++ String getName()
++ void setName(String)
++ String getAddress1()
++ void setAddress1(String)
++ String getAddress2()
++ void setAddress2(String)
++ String getCity()
++ void setCity(String)
++ String getProvince()
++ void setProvince(String)
++ String getPostalCode()
++ void setPostalCode(String)
++ int getMinPrice()
++ void setMinPrice(int)
++ int getMaxPrice()
++ void setMaxPrice(int)
++ int getBannerImage()
++ void setBannerImage(int)
++ Double getRating()
++ void setRating(Double)
++ boolean isVegetarian()
++ void setVegetarian(boolean)
+}
+class com.slinky.foodies.data.DataSource {
+- {static} ArrayList<Restaurant> restaurantData
+- {static} ArrayList<Restaurant> setUpMockData()
++ {static} ArrayList<Restaurant> getRestaurantList()
+}
+class com.slinky.foodies.MainActivity {
+~ ViewPager viewPager
+# void onCreate(Bundle)
+- void setIds()
+- void setViewPager()
++ boolean onCreateOptionsMenu(android.view.Menu)
++ boolean onOptionsItemSelected(android.view.MenuItem)
+- void setListFragment()
+- void setListFragment(ArrayList<Restaurant>)
++ void clearList()
+}
+class com.slinky.foodies.listview.RestaurantListAdapter {
+~ List<Restaurant> data
+~ Context context
++ int getCount()
++ Object getItem(int)
++ long getItemId(int)
++ View getView(int,View,ViewGroup)
+}
+abstract class com.slinky.foodies.data.AbstractRestaurant {
++ {static} String makeTitle(Restaurant)
++ {static} String makeDeliveryLine(Restaurant)
++ {static} String makeFeaturedTitle(Restaurant)
+}
+class com.slinky.foodies.Utilities {
+- {static} ArrayList<Restaurant> copyRestaurants
+- {static} ArrayList<Restaurant> featuredRestaurants
++ {static} ArrayList<Restaurant> getFeaturedRestaurants()
++ {static} ArrayList<Restaurant> getVeganRestaurants()
++ {static} ArrayList<Restaurant> getByRatings()
+- {static} ArrayList<Restaurant> sortByRating(ArrayList<Restaurant>)
++ {static} ArrayList<Restaurant> getByPriceAsc()
+- {static} ArrayList<Restaurant> sortByPriceAsc(ArrayList<Restaurant>)
++ {static} ArrayList<Restaurant> getByPriceDesc()
+- {static} ArrayList<Restaurant> sortByPriceDesc(ArrayList<Restaurant>)
+}
+class com.slinky.foodies.features.FeaturedPager {
+~ ArrayList<Restaurant> restaurants
++ Fragment getItem(int)
++ int getCount()
++ CharSequence getPageTitle(int)
+}
+class com.slinky.foodies.listview.RestaurantListFragment {
+~ ArrayList<Restaurant> restaurants
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void deflateListView()
+}
+
+
+androidx.fragment.app.Fragment <|-- com.slinky.foodies.features.FeatureFragment
+com.slinky.foodies.data.AbstractRestaurant <|-- com.slinky.foodies.data.Restaurant
+androidx.appcompat.app.AppCompatActivity <|-- com.slinky.foodies.MainActivity
+android.widget.BaseAdapter <|-- com.slinky.foodies.listview.RestaurantListAdapter
+com.slinky.foodies.data.DataSource <|-- com.slinky.foodies.Utilities
+androidx.fragment.app.FragmentPagerAdapter <|-- com.slinky.foodies.features.FeaturedPager
+com.slinky.foodies.listview.ListFragment <|-- com.slinky.foodies.listview.RestaurantListFragment
+@enduml

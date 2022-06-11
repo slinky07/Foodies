@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Foodies</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="test">test</string>
     <string name="_5_0">5.0</string>
@@ -10,4 +9,6 @@
     <string name="rating">Rating</string>
     <string name="sort_high_low">Price - High to low</string>
     <string name="sort_low_high">Price - Low to high</string>
+    <string name="montreal">Montreal Restaurants</string>
+    <string name="defaults">Show All Restaurants</string>
 </resources>

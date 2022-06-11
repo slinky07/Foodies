@@ -1,10 +1,12 @@
-package com.slinky.foodies;
+package com.slinky.foodies.data;
 
+import android.annotation.SuppressLint;
+
+import com.slinky.foodies.R;
 import com.slinky.foodies.data.Restaurant;
 
 import java.util.ArrayList;
 import java.util.UUID;
-
 public class DataSource {
 
     private static final ArrayList<Restaurant> restaurantData = setUpMockData();
