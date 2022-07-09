@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/drawable/green_square_drawable.xml" value="0.3715" />
         <entry key="app/src/main/res/drawable/grey_circle_drawable.xml" value="0.3715" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22330115949603868" />
+        <entry key="app/src/main/res/layout/feature_pager_layout.xml" value="0.5401041666666667" />
+        <entry key="app/src/main/res/layout/fragment_item.xml" value="0.5401041666666667" />
         <entry key="app/src/main/res/layout/fragment_pic_three.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_pic_two_fragmrnt.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_restaurant_list.xml" value="0.2477295660948537" />
